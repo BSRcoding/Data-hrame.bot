@@ -7,7 +7,7 @@ class Config(object):
     GROUP_ID = -1002188991477
     TOKEN = "7411570597:AAFJ33Kh-6xr4_28p8CDz78Nw6GSP7mQlnU"
     mongo_url = "mongodb+srv://bak01072007:bak123456@waifu2.5ahbyyu.mongodb.net/"
-    PHOTO_URL = [" https://telegra.ph/file/addad6ba9b5bfddf4ffd6.jpg"]
+    PHOTO_URL = ["https://telegra.ph/file/b925c3985f0f325e62e17.jpg", "https://telegra.ph/file/4211fb191383d895dab9d.jpg"]
     SUPPORT_CHAT = "-1002167888245"
     UPDATE_CHAT = "-1002185961555"
     BOT_USERNAME = "@Godshiv_bot"
