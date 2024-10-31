@@ -3,7 +3,11 @@ from telegram.ext import Updater, CommandHandler, CallbackContext
 import time
 
 # Dictionary to keep track of user claims
-user_claims = {}
+user_claims = {
+   daily = 500
+   weekly = 6000
+   monthly = 10000
+}
 
 # Define the /start command
 def start(update: Update, context: CallbackContext) -> None:
@@ -52,7 +56,7 @@ def claim(update: Update, context: CallbackContext) -> None:
 
 def main():
     # Replace 'YOUR_TOKEN' with your bot's API token
-    updater = Updater("YOUR_TOKEN")
+    updater = Updater("")
 
     dispatcher = updater.dispatcher
 
