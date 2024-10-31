@@ -56,7 +56,7 @@ def claim(update: Update, context: CallbackContext) -> None:
 
 def main():
     # Replace 'YOUR_TOKEN' with your bot's API token
-    updater = Updater("")
+    updater = Updater("7411570597:AAFJ33Kh-6xr4_28p8CDz78Nw6GSP7mQlnU"")
 
     dispatcher = updater.dispatcher
 
