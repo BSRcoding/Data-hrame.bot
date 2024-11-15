@@ -9,7 +9,7 @@ RUN sed -i.bak 's/us-west-2\.ec2\.//' /etc/apt/sources.list
 RUN pip3 install --upgrade pip setuptools
 
 # Copy local files to the container
-COPY . /root/Waifubot-
+COPY . /root/entrypoint.sh-
 WORKDIR /root/Waifubot-
 
 # Install Python requirements
