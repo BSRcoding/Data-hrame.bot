@@ -1,4 +1,15 @@
+
+
 FROM python:3.8.5-slim-buster
+
+# Create the target directory if it doesn't exist
+RUN mkdir -p /opt/render/project/src/main
+
+# Copy the 'main' directory from the build context to the image
+COPY main /opt/render/project/src/main
+
+# Continue with other steps...
+
 
 # Update apt sources
 RUN sed -i.bak 's/us-west-2\.ec2\.//' /etc/apt/sources.list
@@ -9,7 +20,6 @@ RUN pip3 install --upgrade pip setuptools
 # Copy the application files
 COPY . /root/Waifubot-
 
-COPY main /opt/render/project/src/main
 
 # Set the working directory
 WORKDIR /root/Waifubot-
