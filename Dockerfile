@@ -1,4 +1,3 @@
-FROM python:3.8.5-slim-buster
 
 ENV PIP_NO_CACHE_DIR 1
 
@@ -25,4 +24,4 @@ ENV PATH="/home/bot/bin:$PATH"
 EXPOSE 5000
 
 # Use the shell script to run both files
-CMD ["/entrypoint.sh"]
+CMD ["/root/entrypoint.sh"]
