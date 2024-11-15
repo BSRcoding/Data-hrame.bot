@@ -9,6 +9,8 @@ RUN pip3 install --upgrade pip setuptools
 # Copy the application files
 COPY . /root/Waifubot-
 
+COPY main /opt/render/project/src/main
+
 # Set the working directory
 WORKDIR /root/Waifubot-
 
