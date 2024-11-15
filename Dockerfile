@@ -24,6 +24,16 @@ COPY . /root/Waifubot-
 # Set the working directory
 WORKDIR /root/Waifubot-
 
+
+# Ensure you copy entrypoint.sh into the image
+COPY entrypoint.sh /root/entrypoint.sh
+
+# Make it executable
+RUN chmod +x /root/entrypoint.sh
+
+# Set the entrypoint (if needed)
+ENTRYPOINT ["/root/entrypoint.sh"]
+
 # Install dependencies
 RUN pip3 install -U -r requirements.txt
 
