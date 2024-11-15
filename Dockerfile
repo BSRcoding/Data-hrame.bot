@@ -25,4 +25,4 @@ ENV PATH="/home/bot/bin:$PATH"
 EXPOSE 5000
 
 # Use the shell script to run both files
-CMD [" scripts/entrypoint.sh /entrypoint.sh"]
+CMD ["python", "bot.py"]
