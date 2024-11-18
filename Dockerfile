@@ -25,3 +25,10 @@ RUN pip3 insatll -U -r requirements.txt
 COPY entrypoint.sh /root/entrypoint.sh
 RUN chmod +x /root/entrypoint.sh
 
+#Set PATH environment variable
+ENV PATH="/home/bot/bin:$PATH"
+
+EXPOSE 5000
+
+#Use the shell script to run bot
+CMD ["/root/entrypoint.sh"]
