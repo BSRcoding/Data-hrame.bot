@@ -34,5 +34,5 @@ ENTRYPOINT ["/root/entrypoint.sh"]
 # EXPOSE 80
 
 # Command to run the bot (this will be overridden by entrypoint.sh if needed)
-CMD ["python", "bot.py"]
+CMD ["/root/entrypoint.sh"]
 
