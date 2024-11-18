@@ -2,33 +2,37 @@
 
 
 
-From python:3.8.5-slim-buster
+# Start from Python 3.8.5 slim-buster image
+FROM python:3.8.5-slim-buster
 
+# Set the environment variable to prevent caching in pip
 ENV PIP_NO_CACHE_DIR 1
 
+# Remove default AWS mirror (if needed)
 RUN sed -i.bak 's/us-west-2\.ec2\.//' /etc/apt/sources.list
 
-#Upgrade pip and setuptools
-RUN pip3 install --upgrade pip  setuptools
+# Upgrade pip and setuptools
+RUN pip3 install --upgrade pip setuptools
 
-#Copy local files to the container
+# Copy local files into the container
 COPY . /root/Data-hrame.bot
--
-WORKDIR /Data-hrame.bot
-t-
 
+# Set the working directory inside the container
+WORKDIR /root/Data-hrame.bot
 
-#Install python requrements
-RUN pip3 insatll -U -r requirements.txt
+# Install Python requirements from requirements.txt
+RUN pip3 install -U -r requirements.txt
 
-#Copy the entrypoint script and make it executable
+# Copy the entrypoint script and make it executable
 COPY entrypoint.sh /root/entrypoint.sh
 RUN chmod +x /root/entrypoint.sh
 
-#Set PATH environment variable
-ENV PATH="/home/bot/bin:$PATH"
+# Set the entry point for the container
+ENTRYPOINT ["/root/entrypoint.sh"]
 
-EXPOSE 5000
+# Optional: Expose a port if your bot communicates through a webhook or API
+# EXPOSE 80
 
-#Use the shell script to run bot
-CMD ["/root/entrypoint.sh"]
+# Command to run the bot (this will be overridden by entrypoint.sh if needed)
+CMD ["python", "bot.py"]
+
